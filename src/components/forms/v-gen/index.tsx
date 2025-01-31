@@ -327,58 +327,41 @@ const VideoForm = ({ className, disabled = false }: VideoFormProps) => {
   };
 
   // 添加一个函数来获取正确的标签
-  const getFieldLabel = (fieldName: string) => {
-    // 只有在vidu模型且viduType为character时才改变标签
-    if (modelValue === "vidu" && viduTypeValue !== "general") {
-      if (fieldName === "firstFile" || fieldName === "firstFrame") {
-        return {
-          label: "v-gen:form.main_image1.title",
-          placeholder: "v-gen:form.main_image1.desc",
-        };
-      }
-      if (fieldName === "lastFile" || fieldName === "lastFrame") {
-        return {
-          label: "v-gen:form.main_image2.title",
-          placeholder: "v-gen:form.main_image2.desc",
-        };
-      }
-      if (fieldName === "thirdFile" || fieldName === "thirdFrame") {
-        return {
-          label: "v-gen:form.main_image3.title",
-          placeholder: "v-gen:form.main_image3.desc",
-        };
-      }
-    }
-    // 其他情况使用默认标签
-    if (fieldName === "firstFile" || fieldName === "firstFrame") {
-      return {
-        label: "v-gen:form.first_frame.title",
-        placeholder: "v-gen:form.first_frame.desc",
-      };
-    }
-    if (fieldName === "lastFile" || fieldName === "lastFrame") {
-      return {
-        label: "v-gen:form.last_frame.title",
-        placeholder: "v-gen:form.last_frame.desc",
-      };
-    }
-    if (fieldName === "thirdFile" || fieldName === "thirdFrame") {
-      return {
-        label: "v-gen:form.third_frame.title",
-        placeholder: "v-gen:form.third_frame.desc",
-      };
-    }
-    return null;
-  };
+    /**
+   * Get the appropriate label and placeholder for a field based on the model type and field name
+   * For Vidu model with non-general type, uses numbered "main_image" labels (main_image1, main_image2, etc)
+   * Otherwise uses ordinal "frame" labels (first_frame, last_frame, etc)
+   */
+  function getFieldLabel(fieldName: string) {
+    const isViduCharacter =
+      modelValue === 'vidu' && viduTypeValue !== 'general';
 
-  // 添加一个函数来确定是否显示字段
-  const shouldShowField = (fieldName: string) => {
-    // 首先检查字段是否在允许显示的字段列表中
-    if (!showFields.includes(fieldName)) {
-      return false;
-    }
-    return true;
-  };
+    const fieldMap = {
+      firstFile: { num: '1', prefix: 'first' },
+      firstFrame: { num: '1', prefix: 'first' },
+      lastFile: { num: '2', prefix: 'last' },
+      lastFrame: { num: '2', prefix: 'last' },
+      thirdFile: { num: '3', prefix: 'third' },
+      thirdFrame: { num: '3', prefix: 'third' },
+    };
+
+    const field = fieldMap[fieldName as keyof typeof fieldMap];
+    if (!field) return null;
+
+    const basePath = isViduCharacter
+      ? `video-generator:v-gen.form.main_image${field.num}`
+      : `video-generator:v-gen.form.${field.prefix}_frame`;
+
+    return {
+      label: `${basePath}.title`,
+      placeholder: `${basePath}.desc`,
+    };
+  }
+
+  // 添加一个函数来检查字段是否在允许显示的字段列表中
+  function shouldShowField(fieldName: string) {
+    return showFields.includes(fieldName);
+  }
 
   return (
     <form
