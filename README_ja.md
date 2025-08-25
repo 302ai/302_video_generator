@@ -2,13 +2,13 @@
 
 <p align="center">AI ビデオ生成器は、テキストと画像を元に、ルマ（Luma）、ランウェイ・ジェン 3（Runway gen-3）、クリング・ケリング（Kling Keling）、コグビデオ X 智譜（CogVideoX Zhipu）などの業界をリードするビデオの大規模モデルを通じて、高品質の AI ビデオを生成します。</p>
 
-<p align="center"><a href="https://302.ai/ja/tools/vgen/" target="blank"><img src="https://file.302.ai/gpt/imgs/github/20250102/72a57c4263944b73bf521830878ae39a.png" /></a></p >
+<p align="center"><a href="https://302.ai/product/detail/26" target="blank"><img src="https://file.302.ai/gpt/imgs/github/20250102/72a57c4263944b73bf521830878ae39a.png" /></a></p >
 
 <p align="center"><a href="README_zh.md">中文</a> | <a href="README.md">English</a> | <a href="README_ja.md">日本語</a></p>
 
 ![v-gen](docs/AI视频生成器jp.png)
 
-これは[302.AI](https://302.ai/ja/)による[AIビデオジェネレーター](https://302.ai/ja/tools/vgen/)のオープンソース版です。302.AIに直接ログインしてコード不要でオンライン版を利用するか、ニーズに合わせて修正して自分でデプロイできます。
+これは[302.AI](https://302.ai/ja/)による[AIビデオジェネレーター](https://302.ai/product/detail/26)のオープンソース版です。302.AIに直接ログインしてコード不要でオンライン版を利用するか、ニーズに合わせて修正して自分でデプロイできます。
 
 ## インターフェースプレビュー
 AI は入力された説明に基づき、選択したモデルを使用してビデオを生成する。

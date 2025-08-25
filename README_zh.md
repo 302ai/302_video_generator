@@ -2,13 +2,13 @@
 
 <p align="center">AI视频生成器根据文本和图片，通过Luma、Runway gen-3、kling可灵、CogVideoX智谱等业内领先的视频大模型生成高质量的AI视频。</p>
 
-<p align="center"><a href="https://302.ai/tools/vgen/" target="blank"><img src="https://file.302.ai/gpt/imgs/github/20250102/72a57c4263944b73bf521830878ae39a.png" /></a></p >
+<p align="center"><a href="https://302.ai/product/detail/26" target="blank"><img src="https://file.302.ai/gpt/imgs/github/20250102/72a57c4263944b73bf521830878ae39a.png" /></a></p >
 
 <p align="center"><a href="README_zh.md">中文</a> | <a href="README.md">English</a> | <a href="README_ja.md">日本語</a></p>
 
 ![v-gen](docs/AI视频生成器.png)
 
-这是来自[302.AI](https://302.ai)的[AI视频生成器](https://302.ai/tools/vgen/)开源版本。你可以直接登录302.AI，零代码零基础使用在线版本，或根据自己的需求修改并自行部署。
+这是来自[302.AI](https://302.ai)的[AI视频生成器](https://302.ai/product/detail/26)开源版本。你可以直接登录302.AI，零代码零基础使用在线版本，或根据自己的需求修改并自行部署。
 
 ## 界面预览
 AI根据输入的描述，使用选择的模型生成视频。
